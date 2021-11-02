@@ -31,7 +31,7 @@ app.use(function (req, res, next) {
     res.cookie('username', '');
   }
   else {
-    //cookie was already present 
+    //cookie was already present
   }
   next();
 });
@@ -47,9 +47,9 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   if (req.body) {
-    if (req.body.search) {      
+    if (req.body.search) {
       res.send(req.body.search); //TMP
-    } 
+    }
     else if (req.body.searchbar){
       res.render('search', req.cookies);
     }
@@ -69,7 +69,7 @@ app.post('/registration', function(req, res) {
   let isPresent = (username, password) => {
     //tmp
     return false;
-  } 
+  }
   if (!isPresent(req.body.username, req.body.password)) {
     res.cookie('username', req.body.username);
     res.render('index', Object.assign(req.cookies, req.body));

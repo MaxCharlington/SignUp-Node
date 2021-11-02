@@ -3,10 +3,10 @@
 		<a class="navbar-brand" href="/">SignUp</a>
 		<div class="account">
 			<%
-				var userName = (typeof username != 'undefined' ? (username != '' ? username : 'Аккаунт') : 'Аккаунт'); 
-				var links = (userName == 'Аккаунт' ? 
-						[{txt:'Войти', link: '/login'}, {txt:'Зарегистрироваться', link: '/registration'}] 
-					: 
+				var userName = (typeof username != 'undefined' ? (username != '' ? username : 'Аккаунт') : 'Аккаунт');
+				var links = (userName == 'Аккаунт' ?
+						[{txt:'Войти', link: '/login'}, {txt:'Зарегистрироваться', link: '/registration'}]
+					:
 						[{txt:'Записи', link: '#'},{txt:'Профиль', link: '#'},{txt:'Выйти', link: '#'}]
 				);
 			%>
@@ -16,17 +16,17 @@
 			<div class="account-menu">
 				<img src="public/img/user.png"/>
 				<h3><%= userName %></h3>
-				<% links.forEach((elem)=>{ %>					
+				<% links.forEach((elem)=>{ %>
 					<a href='<%= elem.link %>'><%= elem.txt %></a>
 				<%})%>
-			</div>			
+			</div>
 		</div>
 	</div>
 </nav>
 
 <!--
 <script type="text/javascript">
-	var prevScroll = 0; 
+	var prevScroll = 0;
 	var currScroll;
 	var isOpening = true;
 
@@ -36,7 +36,7 @@
 		currScroll = document.documentElement.scrollTop;
 		if (prevScroll - currScroll < 0) {
 			if (isOpening) {
-				nav.classList.remove("open");				 
+				nav.classList.remove("open");
 				nav.className += " " + "close";
 				setTimeout(()=>{nav.style.display = "none";}, 180);
 				isOpening = false;
